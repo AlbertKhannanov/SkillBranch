@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layoutDescription="@xml/fragment_character_scene"
+    tools:context=".presentation.fragments.CharacterFragment">
+
+    <View
+        android:id="@+id/toolbar_hint"
+        android:layout_width="match_parent"
+        android:layout_height="80dp" />
+
+    <ImageView
+        android:id="@+id/house_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/stark_coast_of_arms" />
+
+    <TextView
+        android:id="@+id/character_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="Alba Khannanov"
+        android:textColor="@android:color/white"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/house_image">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_words"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Words"
+                android:textColor="#4C4C4C"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_data_words"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:textColor="#7F7F7F"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/barrier_items"
+                app:layout_constraintTop_toTopOf="@id/tv_words" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barrier_words"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="tv_words, tv_data_words" />
+
+            <TextView
+                android:id="@+id/tv_born"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Born"
+                android:textColor="#4C4C4C"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/barrier_words" />
+
+            <TextView
+                android:id="@+id/tv_data_born"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:textColor="#7F7F7F"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/barrier_items"
+                app:layout_constraintTop_toTopOf="@id/tv_born" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barrier_born"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="tv_born, tv_data_born" />
+
+            <TextView
+                android:id="@+id/tv_titles"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Titles"
+                android:textColor="#4C4C4C"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/barrier_born" />
+
+            <TextView
+                android:id="@+id/tv_data_titles"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:textColor="#7F7F7F"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/barrier_items"
+                app:layout_constraintTop_toTopOf="@id/tv_titles" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barrier_titles"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="tv_titles, tv_data_titles" />
+
+            <TextView
+                android:id="@+id/tv_aliases"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Aliases"
+                android:textColor="#4C4C4C"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/barrier_titles" />
+
+            <TextView
+                android:id="@+id/tv_data_aliases"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:textColor="#7F7F7F"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/barrier_items"
+                app:layout_constraintTop_toTopOf="@id/tv_aliases" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barrier_aliases"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="tv_aliases, tv_data_aliases" />
+
+            <TextView
+                android:id="@+id/tv_father"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Father"
+                android:textColor="#4C4C4C"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/barrier_aliases" />
+
+            <Button
+                android:id="@+id/tv_data_father"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="Father Name"
+                android:textColor="#7F7F7F"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toEndOf="@id/barrier_items"
+                app:layout_constraintTop_toTopOf="@id/tv_father" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barrier_father"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="tv_father, tv_data_father" />
+
+            <TextView
+                android:id="@+id/tv_mother"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mother"
+                android:textColor="#4C4C4C"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/barrier_father" />
+
+            <Button
+                android:id="@+id/tv_data_mother"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="Mother Name"
+                android:textColor="#7F7F7F"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toEndOf="@id/barrier_items"
+                app:layout_constraintTop_toTopOf="@id/tv_mother" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barrier_mother"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="tv_mother, tv_data_mother" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barrier_items"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="end"
+                app:constraint_referenced_ids="tv_words, tv_born, tv_titles, tv_aliases, tv_father, tv_mother" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.motion.widget.MotionLayout>

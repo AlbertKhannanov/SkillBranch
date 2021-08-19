@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">SkillBranch</string>
+    <string name="message_no_internet_connection">Интернет недоступен - приложение не может быть запущенно. Подключитесь к интернету и перезапустите приложение</string>
+    <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, delectus dolores fugiat illo, iure, non possimus quaerat quam reprehenderit sed tempora vitae voluptate? Debitis ex in, magnam minus quasi sit?</string>
 </resources>
