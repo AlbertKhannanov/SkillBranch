@@ -13,6 +13,15 @@ class CharacterViewModel(
 ): ViewModel() {
 
     val character: MutableLiveData<CharacterDb> = MutableLiveData()
+    val words: MutableLiveData<String> = MutableLiveData()
+
+    fun getHouseWords(houseName: String) {
+        viewModelScope.launch(Dispatchers.IO) {
+            words.postValue(
+                dataInteractor.getHouseWords(houseName)
+            )
+        }
+    }
 
     fun getCharacter(characterId: Long) {
         viewModelScope.launch(Dispatchers.IO) {

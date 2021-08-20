@@ -16,9 +16,7 @@
     <ImageView
         android:id="@+id/house_image"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        android:src="@drawable/stark_coast_of_arms" />
+        android:layout_height="match_parent" />
 
     <TextView
         android:id="@+id/character_name"
@@ -26,7 +24,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginBottom="20dp"
-        android:text="Alba Khannanov"
         android:textColor="@android:color/white"
         android:textSize="32sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -37,6 +34,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
+        android:padding="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/house_image">
 
@@ -177,7 +175,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:text="Father Name"
-                android:textColor="#7F7F7F"
+                android:textColor="@android:color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0"
                 app:layout_constraintStart_toEndOf="@id/barrier_items"
@@ -207,7 +205,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:text="Mother Name"
-                android:textColor="#7F7F7F"
+                android:textColor="@android:color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0"
                 app:layout_constraintStart_toEndOf="@id/barrier_items"

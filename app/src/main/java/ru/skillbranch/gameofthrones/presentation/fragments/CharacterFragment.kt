@@ -1,10 +1,14 @@
 package ru.skillbranch.gameofthrones.presentation.fragments
 
+import android.graphics.drawable.Drawable
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import androidx.core.view.isVisible
 import androidx.core.view.marginBottom
 import androidx.navigation.fragment.navArgs
 import ru.skillbranch.gameofthrones.databinding.FragmentCharacterBinding
@@ -36,20 +40,38 @@ class CharacterFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.houseImage.setBackgroundResource(HouseType.fromString(args.houseName).coastOfArms)
+        binding.toolbarHint.setBackgroundResource(HouseType.fromString(args.houseName).primaryColor)
 
+        binding.houseImage.scaleType = ImageView.ScaleType.CENTER_CROP
+        binding.houseImage.setImageResource(HouseType.fromString(args.houseName).coastOfArms)
+
+        viewModel.getHouseWords(args.houseName)
         viewModel.getCharacter(args.characterId)
 
         viewModel.character.observe(viewLifecycleOwner) {
+            Log.i("asdfasdf", "${it}")
             with(binding) {
                 characterName.text = it.name
-                tvDataWords.text = ""
                 tvDataAliases.text = it.aliases
                 tvDataBorn.text = it.born
                 tvDataTitles.text = it.titles
-                tvDataFather.text = it.father
-                tvDataMother.text = it.mother
+                if (it.father == "") {
+                    tvFather.isVisible = false
+                    tvDataFather.isVisible = false
+                } else {
+                    tvDataFather.text = it.father
+                }
+                if (it.mother == "") {
+                    tvMother.isVisible = false
+                    tvDataMother.isVisible = false
+                } else {
+                    tvDataMother.text = it.mother
+                }
             }
+        }
+
+        viewModel.words.observe(viewLifecycleOwner) {
+            binding.tvDataWords.text = it
         }
 
     }

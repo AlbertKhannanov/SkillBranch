@@ -22,4 +22,7 @@ interface HouseDao: BaseDao<HouseDb> {
     @Transaction
     @Query("SELECT * from HouseDb where name LIKE :houseName")
     fun getHouseByNameWithCharacters(houseName: String): HouseWithCharacters
+
+    @Query("SELECT words from HouseDb where name LIKE :houseName")
+    fun getHouseWords(houseName: String): String
 }

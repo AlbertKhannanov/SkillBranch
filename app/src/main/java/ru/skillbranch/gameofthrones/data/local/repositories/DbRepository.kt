@@ -12,6 +12,7 @@ interface DbRepository {
     suspend fun getAllHousesWithCharacters(): List<HouseWithCharacters>
     suspend fun getHouseByNameWithCharacter(houseName: String): HouseWithCharacters
     suspend fun getAllHouses(): List<HouseDb>
+    suspend fun getHouseWords(houseName: String): String
 
     suspend fun save(characterDb: CharacterDb)
     suspend fun getCharacterById(id: Long): CharacterDb

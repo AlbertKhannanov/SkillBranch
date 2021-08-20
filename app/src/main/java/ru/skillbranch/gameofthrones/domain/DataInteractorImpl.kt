@@ -30,5 +30,8 @@ class DataInteractorImpl(
     override suspend fun getCharacterById(id: Long): CharacterDb =
         dbRepository.getCharacterById(id)
 
+    override suspend fun getHouseWords(houseName: String): String =
+        dbRepository.getHouseWords(houseName)
+
     override suspend fun isDataIsLoad(): Boolean = dbRepository.isDataIsLoad()
 }

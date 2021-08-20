@@ -14,5 +14,6 @@ interface DataInteractor {
     suspend fun getHouseByNameWithCharacters(houseName: String): HouseWithCharacters
     suspend fun getAllHouses(): List<HouseDb>
     suspend fun getCharacterById(id: Long): CharacterDb
+    suspend fun getHouseWords(houseName: String): String
     suspend fun isDataIsLoad(): Boolean
 }

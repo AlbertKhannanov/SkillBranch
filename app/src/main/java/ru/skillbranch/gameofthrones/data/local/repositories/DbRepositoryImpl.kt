@@ -27,6 +27,9 @@ class DbRepositoryImpl(
     override suspend fun getAllHouses(): List<HouseDb> =
         houseDao.getAllHouses()
 
+    override suspend fun getHouseWords(houseName: String): String =
+        houseDao.getHouseWords(houseName)
+
     override suspend fun save(characterDb: CharacterDb) {
         characterDao.insert(characterDb)
     }

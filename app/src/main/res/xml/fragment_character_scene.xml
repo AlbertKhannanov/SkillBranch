@@ -7,6 +7,17 @@
         motion:constraintSetStart="@id/up_scroll_start"
         motion:duration="1000">
         <OnSwipe motion:dragDirection="dragUp" />
+        <KeyFrameSet>
+            <KeyPosition
+                motion:framePosition="99"
+                motion:keyPositionType="pathRelative"
+                motion:motionTarget="@id/character_name"
+                motion:percentX="1" />
+            <KeyAttribute
+                android:alpha="0"
+                motion:framePosition="90"
+                motion:motionTarget="@id/toolbar_hint" />
+        </KeyFrameSet>
     </Transition>
 
     <Transition
@@ -34,17 +45,20 @@
         <Constraint android:id="@id/toolbar_hint">
             <Layout
                 android:layout_width="match_parent"
-                android:layout_height="1dp" />
+                android:layout_height="100dp"
+                motion:layout_constraintTop_toTopOf="parent" />
+            <PropertySet android:visibility="invisible" />
+            <Transform android:elevation="2dp" />
         </Constraint>
         <Constraint android:id="@id/character_name">
             <Layout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginBottom="20dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginBottom="40dp"
                 android:text="Alba Khannanov"
                 android:textColor="@android:color/white"
-                android:textSize="32sp"
+                android:textSize="40sp"
                 motion:layout_constraintBottom_toBottomOf="parent"
                 motion:layout_constraintStart_toStartOf="parent" />
         </Constraint>
@@ -66,14 +80,9 @@
                 motion:layout_constraintTop_toBottomOf="@id/toolbar_hint" />
         </Constraint>
         <Constraint android:id="@id/toolbar_hint">
-            <Layout
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                motion:layout_constraintTop_toTopOf="parent" />
-            <Transform android:elevation="2dp" />
-            <CustomAttribute
-                motion:attributeName="backgroundColor"
-                motion:customColorValue="@color/color_gray" />
+            <PropertySet
+                android:elevation="2dp"
+                android:visibility="visible" />
         </Constraint>
         <Constraint android:id="@id/character_name">
             <Layout
@@ -86,8 +95,6 @@
                 android:elevation="2dp"
                 android:scaleX=".5"
                 android:scaleY=".5" />
-            <CustomAttribute
-                />
         </Constraint>
     </ConstraintSet>
 
