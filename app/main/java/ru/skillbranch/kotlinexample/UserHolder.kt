@@ -1,6 +1,5 @@
 package ru.skillbranch.kotlinexample
 
-import android.util.Log
 import androidx.annotation.VisibleForTesting
 
 object UserHolder {
